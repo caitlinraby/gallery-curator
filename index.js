@@ -35,14 +35,33 @@ function fetchImage(objectID) {
     .then(data => displayImage(data))
 };
 
-const galleryList = document.querySelector("#gallery-list")
+
+const searchResultsList = document.querySelector("#search-results-list")
 
 function displayImage(data){
-    console.log(data)
+    // console.log(data)
     const imgURL = data.primaryImage;
     const createImgLi = document.createElement('li')
-    createImgLi.innerHTML = `<img src=${imgURL}><button class="like-button"><3</button>`
-    galleryList.append(createImgLi);
+    createImgLi.innerHTML = `<img class="image-results" src=${imgURL}><button class="like-button"><3</button>`
+    
+    createImgLi.querySelector(".like-button").addEventListener('click', () => saveToGallery(data));
+    searchResultsList.append(createImgLi);
+    
+    
+}
+
+const galleryList = document.querySelector("#gallery-list")
+
+function saveToGallery(data){
+    const saveImage = document.createElement('li');
+    const imgURL = data.primaryImage;
+    saveImage.innerHTML = `<img class="saved-images" src=${imgURL}><button class="delete-button">X</button>`
+    saveImage.querySelector(".delete-button").addEventListener('click', () => deleteImg(saveImage));
+    galleryList.append(saveImage)
+}
+
+function deleteImg(saveImage){
+    saveImage.remove();
 }
 
 // function displayObjectImages(object){
