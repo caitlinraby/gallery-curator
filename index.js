@@ -25,7 +25,7 @@ function fetchObjectIDsByKeyword(e) {
 
 // //callback function in fetch request from the above function^
 function displaySearchResults(data){
-    data.objectIDs.slice(0,5).forEach(objectID => fetchImage(objectID));
+    data.objectIDs.slice(0,10).forEach(objectID => fetchImage(objectID));
 }
 
 // //callback function for above function. Needs to display the images from the objects in the above results
@@ -53,9 +53,10 @@ function displayImage(data){
 const galleryList = document.querySelector("#gallery-list")
 
 function saveToGallery(data){
-    const saveImage = document.createElement('li');
+    const saveImage = document.createElement('div');
     const imgURL = data.primaryImage;
-    saveImage.innerHTML = `<img class="saved-images" src=${imgURL}><button class="delete-button">X</button>`
+    saveImage.innerHTML = `<div class="image-container"><img class="saved-images" src=${imgURL}></div><div class="delete-button-div"><button class="delete-button">X</button></div>`
+    //can I just add <div> to the above innerHTML to create an inner div?
     saveImage.querySelector(".delete-button").addEventListener('click', () => deleteImg(saveImage));
     galleryList.append(saveImage)
 }
