@@ -42,7 +42,7 @@ function displayImage(data){
     // console.log(data)
     const imgURL = data.primaryImage;
     const createImgDiv = document.createElement('div')
-    createImgDiv.innerHTML = `<img class="image-results" src=${imgURL}><button class="like-button">♥️</button>`
+    createImgDiv.innerHTML = `<img class="image-results" src=${imgURL}><div class="like-button-div"><button class="like-button">♥️</button></div>`
     
     createImgDiv.querySelector(".like-button").addEventListener('click', () => saveToGallery(data));
     searchResultsList.append(createImgDiv);
@@ -55,9 +55,7 @@ const galleryGrid = document.querySelector("#gallery-container")
 function saveToGallery(data){
     const saveImage = document.createElement('div');
     const imgURL = data.primaryImage;
-    // saveImage.className = "grid"
     saveImage.innerHTML = `<img class="saved-images" src=${imgURL}></div><div class="delete-button-div"><button class="delete-button">✖️</button>`
-    //can I just add <div> to the above innerHTML to create an inner div?
     saveImage.querySelector(".delete-button").addEventListener('click', () => deleteImg(saveImage));
     galleryGrid.append(saveImage)
 }
@@ -66,35 +64,3 @@ function deleteImg(saveImage){
     saveImage.remove();
 }
 
-// function displayObjectImages(object){
-//     const galleryList = document.querySelector("#gallery-list")
-//     const imgURL = object.primaryImage;
-//     const addDiv = document.createElement('div');
-//     addDiv.innerHTML = `<img src=${imageURL}></img>`
-//     galleryList.append(addDiv);
-// }
-
-
-
-
-
-
-
-// const objectID = "1668"
-
-// function fetchArt(){
-//     fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`)
-//     .then(result => result.json())
-//     .then(data => displayFunction(data));
-// };
-
-
-
-// function displayFunction(data) {
-//     const galleryList = document.querySelector("#gallery-list")
-//     const displayImageURL = data.primaryImage;
-//     const addLi = document.createElement('li');
-//     addLi.innerHTML = `<img src=${displayImageURL}></img>`
-//     galleryList.append(addLi);
-    
-// }

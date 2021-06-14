@@ -1,8 +1,43 @@
 img {
+    padding: 10px;
     width:100px;
     height: auto;
     
 }
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: white;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 60px;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+}
+
+
 
 img.saved-images {
     height: 250px;
@@ -13,10 +48,26 @@ img.saved-images {
   
     
 }
+
+img.image-results {
+    height: 150px;
+    width: auto;
+    border: 36px;
+    margin: auto;
+    padding: 10px;
+   
+}
+
+.like-button {
+    color: red;
+}
+
+
 #search-results-container {
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+
 
 #gallery-div {
     color: azure;
@@ -43,46 +94,6 @@ img.saved-images {
     background-size: cover;
     vertical-align: middle;
     
-
-    
-}
-  
-
-div.image-container {
-    vertical-align: middle;
-    align-items: center;
-    padding: 10px;
-    
-}
-
-.like-button {
-        color: red;
-}
-
-h1 {
-    text-align: center;
-    font-size: 60px;
-}
-
-h2 {
-    text-align: center;
-    font-size: 45px;
-}
-
-h3 {
-    text-align: center;
-}
-
-h4 {
-    text-align: center;
-}
-
-h5 {
-    text-align: center;
-}
-
-h6 {
-    text-align: center;
 }
 
 #banner {
@@ -103,11 +114,11 @@ h6 {
     transition-timing-function: ease;
   }
 
-  body {
-      font-family: 'Playfair Display', serif;
-      background-color: white;
-  }
-
+ 
   #delete-instructions {
       text-align: center;
+  }
+
+  p#app-description {
+      font-size: 32px;
   }
