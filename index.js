@@ -41,24 +41,25 @@ const searchResultsList = document.querySelector("#search-results-list")
 function displayImage(data){
     // console.log(data)
     const imgURL = data.primaryImage;
-    const createImgLi = document.createElement('li')
-    createImgLi.innerHTML = `<img class="image-results" src=${imgURL}><button class="like-button"><3</button>`
+    const createImgDiv = document.createElement('div')
+    createImgDiv.innerHTML = `<img class="image-results" src=${imgURL}><button class="like-button"><3</button>`
     
-    createImgLi.querySelector(".like-button").addEventListener('click', () => saveToGallery(data));
-    searchResultsList.append(createImgLi);
+    createImgDiv.querySelector(".like-button").addEventListener('click', () => saveToGallery(data));
+    searchResultsList.append(createImgDiv);
     
     
 }
 
-const galleryList = document.querySelector("#gallery-list")
+const galleryGrid = document.querySelector("#gallery-grid-div")
 
 function saveToGallery(data){
     const saveImage = document.createElement('div');
     const imgURL = data.primaryImage;
-    saveImage.innerHTML = `<div class="image-container"><img class="saved-images" src=${imgURL}></div><div class="delete-button-div"><button class="delete-button">X</button></div>`
+    saveImage.className = "grid"
+    saveImage.innerHTML = `<img class="saved-images" src=${imgURL}></div><div class="delete-button-div"><button class="delete-button">x</button>`
     //can I just add <div> to the above innerHTML to create an inner div?
     saveImage.querySelector(".delete-button").addEventListener('click', () => deleteImg(saveImage));
-    galleryList.append(saveImage)
+    galleryGrid.append(saveImage)
 }
 
 function deleteImg(saveImage){

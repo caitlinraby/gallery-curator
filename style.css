@@ -5,7 +5,8 @@ img {
 }
 
 img.saved-images {
-    width: 100px;
+    height: 250px;
+    width: auto;
     border: 36px;
     margin: auto;
     padding: 10px;
@@ -13,9 +14,10 @@ img.saved-images {
     
 }
 
-#gallery-list div {
-    width: 120px;
-    height: 150px;
+#gallery-grid-div div {
+    
+    width: auto;
+    height: auto;
     padding: 10px;
     background-size: cover;
     vertical-align: middle;
@@ -24,11 +26,13 @@ img.saved-images {
     
 }
 
+.grid {
+    grid: auto-flow / 1fr 1fr 1fr;
+}
+
 div.image-container {
     vertical-align: middle;
     align-items: center;
-    background-image:
-        url("https://www.pngfind.com/pngs/m/80-804703_ornate-picture-frame-png-arc-studios-gallery-transparent.png");
     padding: 10px;
     
 }
