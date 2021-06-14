@@ -1,9 +1,4 @@
-img {
-    padding: 10px;
-    width:100px;
-    height: auto;
-    
-}
+
 
 body {
     font-family: 'Playfair Display', serif;
@@ -37,8 +32,11 @@ h6 {
     text-align: center;
 }
 
-.search-results {
-    text-align: center;
+img {
+    padding: 10px;
+    width:100px;
+    height: auto;
+    
 }
 
 img.saved-images {
@@ -59,6 +57,10 @@ img.image-results {
     margin: auto;
     padding: 10px;
    
+}
+
+.search-results {
+    text-align: center;
 }
 
 .like-button {
