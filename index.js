@@ -23,9 +23,10 @@ function fetchObjectIDsByKeyword(e) {
 
 
 
-// //callback function in fetch request from the above function^
+//callback function in fetch request from the above function (line 21). 
+//should display first 20 image results from Met API objects associated with the searched keyword
 function displaySearchResults(data){
-    data.objectIDs.slice(0,30).forEach(objectID => fetchImage(objectID));
+    data.objectIDs.slice(0,20).forEach(objectID => fetchImage(objectID));
 }
 
 // //callback function for above function. Needs to display the images from the objects in the above results
@@ -35,9 +36,11 @@ function fetchImage(objectID) {
     .then(data => displayImage(data))
 };
 
-
+//save search results container as a variable in order to refer to it in callback function below for displaying results
 const searchResultsList = document.querySelector("#search-results-container")
 
+// callback function referenced in above fetch function (line35). Display search result images 
+//in search result container, display like button. Add event listener to <3 button.
 function displayImage(data){
     // console.log(data)
     const imgURL = data.primaryImage;
@@ -50,8 +53,13 @@ function displayImage(data){
     
 }
 
+//save gallery container as a variable in order to save liked works there
 const galleryGrid = document.querySelector("#gallery-container")
 
+//define function referenced in line 50
+//add saved images to the gallery container
+//add an "x" delete button next to the work
+//attach event listener to delete button so that it functions when clicked (define below)
 function saveToGallery(data){
     const saveImage = document.createElement('div');
     const imgURL = data.primaryImage;
@@ -60,6 +68,7 @@ function saveToGallery(data){
     galleryGrid.append(saveImage)
 }
 
+//defining above function (line 65). Deletes images when event listener triggered by user clicking X delete button.
 function deleteImg(saveImage){
     saveImage.remove();
 }
