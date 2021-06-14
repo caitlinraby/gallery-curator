@@ -42,7 +42,7 @@ function displayImage(data){
     // console.log(data)
     const imgURL = data.primaryImage;
     const createImgDiv = document.createElement('div')
-    createImgDiv.innerHTML = `<img class="image-results" src=${imgURL}><div class="like-button-div"><button class="like-button">♥️</button></div>`
+    createImgDiv.innerHTML = `<div class="search-results"><img class="image-results" src=${imgURL}></div><div class="like-button-div"><button class="like-button">♥️</button></div>`
     
     createImgDiv.querySelector(".like-button").addEventListener('click', () => saveToGallery(data));
     searchResultsList.append(createImgDiv);

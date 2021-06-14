@@ -37,7 +37,9 @@ h6 {
     text-align: center;
 }
 
-
+.search-results {
+    text-align: center;
+}
 
 img.saved-images {
     height: 250px;
@@ -50,6 +52,7 @@ img.saved-images {
 }
 
 img.image-results {
+    text-align: center;
     height: 150px;
     width: auto;
     border: 36px;
@@ -62,6 +65,10 @@ img.image-results {
     color: red;
 }
 
+.like-button-div {
+    text-align: center;
+    
+}
 
 #search-results-container {
     display: grid;
