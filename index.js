@@ -25,7 +25,7 @@ function fetchObjectIDsByKeyword(e) {
 
 // //callback function in fetch request from the above function^
 function displaySearchResults(data){
-    data.objectIDs.slice(0,10).forEach(objectID => fetchImage(objectID));
+    data.objectIDs.slice(0,30).forEach(objectID => fetchImage(objectID));
 }
 
 // //callback function for above function. Needs to display the images from the objects in the above results
@@ -36,13 +36,13 @@ function fetchImage(objectID) {
 };
 
 
-const searchResultsList = document.querySelector("#search-results-list")
+const searchResultsList = document.querySelector("#search-results-container")
 
 function displayImage(data){
     // console.log(data)
     const imgURL = data.primaryImage;
     const createImgDiv = document.createElement('div')
-    createImgDiv.innerHTML = `<img class="image-results" src=${imgURL}><button class="like-button"><3</button>`
+    createImgDiv.innerHTML = `<img class="image-results" src=${imgURL}><button class="like-button">♥️</button>`
     
     createImgDiv.querySelector(".like-button").addEventListener('click', () => saveToGallery(data));
     searchResultsList.append(createImgDiv);
@@ -50,13 +50,13 @@ function displayImage(data){
     
 }
 
-const galleryGrid = document.querySelector("#gallery-grid-div")
+const galleryGrid = document.querySelector("#gallery-container")
 
 function saveToGallery(data){
     const saveImage = document.createElement('div');
     const imgURL = data.primaryImage;
-    saveImage.className = "grid"
-    saveImage.innerHTML = `<img class="saved-images" src=${imgURL}></div><div class="delete-button-div"><button class="delete-button">x</button>`
+    // saveImage.className = "grid"
+    saveImage.innerHTML = `<img class="saved-images" src=${imgURL}></div><div class="delete-button-div"><button class="delete-button">✖️</button>`
     //can I just add <div> to the above innerHTML to create an inner div?
     saveImage.querySelector(".delete-button").addEventListener('click', () => deleteImg(saveImage));
     galleryGrid.append(saveImage)
