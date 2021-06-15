@@ -64,6 +64,7 @@ function saveToGallery(data){
     const saveImage = document.createElement('div');
     const imgURL = data.primaryImage;
     saveImage.innerHTML = `<img class="saved-images" src=${imgURL}></div><div class="delete-button-div"><button class="delete-button">✖️</button>`
+    //use querySelector WITHIN the new innerHTML to search for the button element with the class "delete-button", to attach evenListener to that button:
     saveImage.querySelector(".delete-button").addEventListener('click', () => deleteImg(saveImage));
     galleryGrid.append(saveImage)
 }
